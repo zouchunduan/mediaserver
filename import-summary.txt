@@ -1,0 +1,88 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From MediaCenter:
+* proguard-project.txt
+From moduleAboutus:
+* CVS\
+* CVS\Entries
+* CVS\Repository
+* CVS\Root
+* proguard.cfg
+From moduleAnimtab:
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:18.0.0
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In moduleAboutus:
+* AndroidManifest.xml => moduleAboutus\src\main\AndroidManifest.xml
+* assets\ => moduleAboutus\src\main\assets\
+* res\ => moduleAboutus\src\main\res\
+* src\ => moduleAboutus\src\main\java\
+* src\com\CVS\Entries => moduleAboutus\src\main\resources\com\CVS\Entries
+* src\com\CVS\Repository => moduleAboutus\src\main\resources\com\CVS\Repository
+* src\com\CVS\Root => moduleAboutus\src\main\resources\com\CVS\Root
+* src\com\hc\modules\aboutus\CVS\Entries => moduleAboutus\src\main\resources\com\hc\modules\aboutus\CVS\Entries
+* src\com\hc\modules\aboutus\CVS\Repository => moduleAboutus\src\main\resources\com\hc\modules\aboutus\CVS\Repository
+* src\com\hc\modules\aboutus\CVS\Root => moduleAboutus\src\main\resources\com\hc\modules\aboutus\CVS\Root
+* src\CVS\Entries => moduleAboutus\src\main\resources\CVS\Entries
+* src\CVS\Repository => moduleAboutus\src\main\resources\CVS\Repository
+* src\CVS\Root => moduleAboutus\src\main\resources\CVS\Root
+In moduleAnimtab:
+* AndroidManifest.xml => moduleAnimtab\src\main\AndroidManifest.xml
+* assets\ => moduleAnimtab\src\main\assets
+* res\ => moduleAnimtab\src\main\res\
+* src\ => moduleAnimtab\src\main\java\
+In MediaCenter:
+* AndroidManifest.xml => mediaCenter\src\main\AndroidManifest.xml
+* assets\ => mediaCenter\src\main\assets
+* res\ => mediaCenter\src\main\res\
+* src\ => mediaCenter\src\main\java\
+* src\com\uvchip\files\FileOperationThreadManager.java.bak => mediaCenter\src\main\resources\com\uvchip\files\FileOperationThreadManager.java.bak
+* src\com\uvchip\files\RefreshData.java.bak => mediaCenter\src\main\resources\com\uvchip\files\RefreshData.java.bak
+* src\com\uvchip\utils\Helper.java.bak => mediaCenter\src\main\resources\com\uvchip\utils\Helper.java.bak
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
